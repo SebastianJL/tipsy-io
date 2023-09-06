@@ -1,5 +1,5 @@
 # TipsyIO
-Read and write tipsy files as numpy arrays. Tipsy a binary data format used in PKDGRAV3.
+Read and write tipsy files as numpy arrays. Tipsy is a binary data format used in [PKDGRAV3][pkdgrav3].
 
 # Basic usage
 See examples folder for basic examples.
@@ -32,3 +32,6 @@ n_gas + n_dark + n_star particles in the format
 |--------------|------|------------|------------|--------|-------|-----|-----|
 | dtype:       | f4   | {f4, dims} | {f4, dims} | f4     | f4    | f4  | f4  |
 | explanation: | Mass | Position   | Velocity   | ???    | ???   | ??? | ??? |
+
+
+[pkdgrav3]: <pkdgrav.org> "pkdgrav website"
