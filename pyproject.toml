@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "tipsy-io"
+version = "0.1.0"
+description = ""
+authors = ["SebastianJL <johannes.lade@yahoo.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+numpy = "^1.25.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
