@@ -35,4 +35,4 @@ n_gas + n_dark + n_star particles in the format
 
 The tipsy file can either be saved in big or little endian format. This is tested by reading the header and checking if the dims is equal to 1, 2 or 3.
 
-[pkdgrav3]: <pkdgrav.org> "pkdgrav website"
+[pkdgrav3]: <https://bitbucket.org/dpotter/pkdgrav3/src/master/> "pkdgrav website"

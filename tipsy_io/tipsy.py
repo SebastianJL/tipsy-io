@@ -11,22 +11,22 @@ _ALLOWED_DIMS = (1, 2, 3)
 
 @dataclass
 class Tipsy:
-    header: npt.DTypeLike
-    gas: np.array = field(repr=False)
-    dark: np.array = field(repr=False)
-    star: np.array = field(repr=False)
+    header: np.void
+    gas: npt.NDArray[np.float32] = field(repr=False)
+    dark: npt.NDArray[np.float32] = field(repr=False)
+    star: npt.NDArray[np.float32] = field(repr=False)
 
     def tofile(self, fname: str):
         """Save Tipsy object to file.
 
-        The byteorder/endianness is the same as when loading the file.
-        If you want to change that you currently have to do this by changing the byteorder of all fields.
-        Be aware that there exists a bug with in numpy that doesn't 
+        The byteorder/endianness is the same as when loading the file. See Tipsy.fromfile().
+        If you want to change that you currently have to do this by changing the byteorder of all fields yourself.
+        Be aware that there exists a bug in numpy that doesn't 
         let you swap the byteorder of the header with ndarray.byteswap(). 
         See https://github.com/numpy/numpy/issues/24694.
 
         Args:
-            fname: _description_
+            fname: File name or path.
         """
         with open(fname, 'wb') as ofile:
             self.header.tofile(ofile)
@@ -36,13 +36,13 @@ class Tipsy:
 
     @classmethod
     def fromfile(cls, fname: str, byteorder: Optional[str] = None) -> "Tipsy":
-        f"""Load tipsy file as Tipsy object.
+        """Load tipsy file as Tipsy object.
 
         Args:
             fname: File name or path.
-            byteorder: Endianness of binary file. Allowed values are {_ALLOWED_BYTEORDERS} or None.
+            byteorder: Endianness of binary file. Allowed values are ('=', '>', '<') or None.
                 See https://numpy.org/doc/stable/reference/generated/numpy.dtype.byteorder.html for explanation.
-                If byte order is {None} then Tipsy tries to guess the byteorder in order of {_ALLOWED_BYTEORDERS}. 
+                If byte order is {None} then Tipsy tries to guess the byteorder in order of ('=', '>', '<'). 
                 Defaults to None.
 
         Raises:
@@ -51,7 +51,7 @@ class Tipsy:
             IOError: Couldn't guess byteorder.
 
         Returns:
-            Self
+            Tipsy
         """
         if byteorder not in _ALLOWED_BYTEORDERS + (None,):
             raise KeyError(
