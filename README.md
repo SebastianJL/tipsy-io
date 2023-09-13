@@ -1,3 +1,5 @@
+[![Python package](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml/badge.svg?event=gollum)](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml)
+
 # TipsyIO
 Read and write tipsy files as numpy arrays. Tipsy is a binary data format used in [PKDGRAV3][pkdgrav3].
 
