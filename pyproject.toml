@@ -1,8 +1,13 @@
 [tool.poetry]
 name = "tipsy-io"
 version = "0.1.0"
-description = ""
-authors = ["SebastianJL <johannes.lade@yahoo.com>"]
+description = "Read and write tipsy files as numpy arrays."
+authors = [
+    "SebastianJL <johannes.lade@yahoo.com>",
+    "Douglas Potter <douglas.potter@uzh.ch>"
+    ]
+keywords = ["tipsy", "io", "read", "write"]
+classifiers = ["Topic :: File Formats"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
