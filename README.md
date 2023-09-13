@@ -1,4 +1,5 @@
-[![Python package](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml/badge.svg?event=gollum)](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml)
+[![Python package](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml/badge.svg)](https://github.com/SebastianJL/tipsy-io/actions/workflows/python-package.yml)
+[![Deploy static content to Pages](https://github.com/SebastianJL/tipsy-io/actions/workflows/deploy_docs.yml/badge.svg)](https://github.com/SebastianJL/tipsy-io/actions/workflows/deploy_docs.yml)
 
 # TipsyIO
 Read and write tipsy files as numpy arrays. Tipsy is a binary data format used in [PKDGRAV3][pkdgrav3].
