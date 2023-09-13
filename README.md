@@ -10,7 +10,7 @@ See [examples folder](examples).
 | field name:  | time                                                                                                | n                     | dims                           | n_gas              | n_dark                      | n_star               | pad                                                                            |
 |--------------|-----------------------------------------------------------------------------------------------------|-----------------------|--------------------------------|--------------------|-----------------------------|----------------------|--------------------------------------------------------------------------------|
 | dtype:       | f8                                                                                                  | i4                    | i4                             | i4                 | i4                          | i4                   | i4                                                                             |
-| explanation: | Usually expansion factor for cosmology simulations, or time in pkdgrav3 units for non-cosmological. | n_gas +n_dark +n_star | Spatial dimensions, 1, 2 or 3. | # of gas particles | # of  dark matter particles | # of  star particles | 4 byte padding in case header is a struct that needs to be aligned to 8 bytes. |
+| explanation: | Usually expansion factor for cosmology simulations, or time in pkdgrav3 units for non-cosmological simulations. | n_gas +n_dark +n_star | Spatial dimensions, 1, 2 or 3. | # of gas particles | # of  dark matter particles | # of  star particles | 4 byte padding in case header is a struct that needs to be aligned to 8 bytes. |
 
 ### Body
 n_gas + n_dark + n_star particles in the format
