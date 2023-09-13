@@ -17,6 +17,17 @@ class Tipsy:
     star: np.array = field(repr=False)
 
     def tofile(self, fname: str):
+        """Save Tipsy object to file.
+
+        The byteorder/endianness is the same as when loading the file.
+        If you want to change that you currently have to do this by changing the byteorder of all fields.
+        Be aware that there exists a bug with in numpy that doesn't 
+        let you swap the byteorder of the header with ndarray.byteswap(). 
+        See https://github.com/numpy/numpy/issues/24694.
+
+        Args:
+            fname: _description_
+        """
         with open(fname, 'wb') as ofile:
             self.header.tofile(ofile)
             self.gas.tofile(ofile)
@@ -64,7 +75,6 @@ class Tipsy:
                     header = np.fromfile(
                         binary_in, count=1, dtype=header_type.newbyteorder(bo))[0]
                     n_dims = header['dims']
-                    print(f"{bo=}, {n_dims=}")
                     if n_dims in _ALLOWED_DIMS:
                         byteorder = bo
                         break
