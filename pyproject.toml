@@ -1,11 +1,13 @@
 [tool.poetry]
 name = "tipsy-io"
-version = "0.1.0"
+version = "0.2.0"
 description = "Read and write tipsy files as numpy arrays."
 authors = [
     "SebastianJL <johannes.lade@yahoo.com>",
-    "Douglas Potter <douglas.potter@uzh.ch>"
-    ]
+    "Douglas Potter <douglas.potter@uzh.ch>",
+]
+maintainers = ["SebastianJL <johannes.lade@yahoo.com>"]
+repository = "https://github.com/SebastianJL/tipsy-io"
 keywords = ["tipsy", "io", "read", "write"]
 classifiers = ["Topic :: File Formats"]
 readme = "README.md"
@@ -16,6 +18,9 @@ numpy = "^1.25.2"
 
 [tool.poetry.group.test.dependencies]
 pytest = "^7.4.2"
+
+[tool.poetry.group.doc.dependencies]
+pdoc = "^14.1.0"
 
 [build-system]
 requires = ["poetry-core"]
