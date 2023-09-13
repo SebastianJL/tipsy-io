@@ -18,6 +18,8 @@ t.tofile("test_out.tipsy")
 # Access field in header. See README.md for more fields.
 print(f"{t.header['n_dark'] = }")
 
-# Access "columns" particle types.
+# Access speed of all dark particles.
 print(f"{t.dark['v'] = }")
+
+# Access mass of all gas particles.
 print(f"{t.gas['mass'] = }")
