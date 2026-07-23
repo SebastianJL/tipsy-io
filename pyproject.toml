@@ -1,28 +1,41 @@
-[tool.poetry]
+[project]
 name = "tipsy-io"
 version = "0.2.0"
 description = "Read and write tipsy files as numpy arrays."
 authors = [
-    "SebastianJL <johannes.lade@yahoo.com>",
-    "Douglas Potter <douglas.potter@uzh.ch>",
+    { name = "SebastianJL", email = "johannes.lade@yahoo.com" },
+    { name = "Douglas Potter", email = "douglas.potter@uzh.ch" },
 ]
-maintainers = ["SebastianJL <johannes.lade@yahoo.com>"]
-repository = "https://github.com/SebastianJL/tipsy-io"
-documentation = "https://sebastianjl.github.io/tipsy-io/"
-keywords = ["tipsy", "io", "read", "write"]
-classifiers = ["Topic :: File Formats"]
+requires-python = ">=3.14,<4"
 readme = "README.md"
+maintainers = [{ name = "SebastianJL", email = "johannes.lade@yahoo.com" }]
+keywords = [
+    "tipsy",
+    "io",
+    "read",
+    "write",
+]
+classifiers = [
+    "Topic :: File Formats",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+    "numpy~=2.0",
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-numpy = "^1.25.2"
+[project.urls]
+Repository = "https://github.com/SebastianJL/tipsy-io"
+Documentation = "https://sebastianjl.github.io/tipsy-io/"
 
-[tool.poetry.group.test.dependencies]
-pytest = "^7.4.2"
+[dependency-groups]
+test = ["pytest~=9.0"]
+doc = ["pdoc>=14.1.0,<15"]
 
-[tool.poetry.group.doc.dependencies]
-pdoc = "^14.1.0"
+[tool.uv]
+default-groups = "all"
+package = true
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.31,<0.12.0"]
+build-backend = "uv_build"
